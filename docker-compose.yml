@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_PATH=/app/backend/data/pastes.db
+    volumes:
+      - paste_data:/app/backend/data
+    restart: unless-stopped
+
+volumes:
+  paste_data:

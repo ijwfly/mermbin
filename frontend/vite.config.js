@@ -5,6 +5,14 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          mermaid: ['mermaid'],
+          highlightjs: ['highlight.js'],
+        },
+      },
+    },
   },
   server: {
     proxy: {
